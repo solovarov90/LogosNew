@@ -1,0 +1,11 @@
+.openclaw/
+memory/
+.pi/
+*.md.bak
+BOOTSTRAP.md
+HEARTBEAT.md
+IDENTITY.md
+SOUL.md
+TOOLS.md
+USER.md
+AGENTS.md
