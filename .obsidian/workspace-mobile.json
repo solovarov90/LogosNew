@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "3870a11a48117424",
+    "type": "split",
+    "children": [
+      {
+        "id": "98958e1b782aa6a0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9318bae2aac0c7fd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Питч/СКРИПТ_ВЫСТУПЛЕНИЯ_SMARTPOSTING.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "СКРИПТ_ВЫСТУПЛЕНИЯ_SMARTPOSTING"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3272d7773e7e87c0",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "d6e96df23cc1c554",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Файловый менеджер"
+        }
+      },
+      {
+        "id": "fd9e9861cefa089a",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "tag:маркетинг/нейромаркетинг",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Поиск"
+        }
+      },
+      {
+        "id": "e3076df5b3e6cd49",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Теги"
+        }
+      },
+      {
+        "id": "daa41ec78db4c11c",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "Все свойства"
+        }
+      },
+      {
+        "id": "ef4f93bfcd203ad1",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Закладки"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "1d7837b70ffe6245",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "cfdcf79fe13144e9",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Питч/ЧЕРНОВИК_ПИТЧА_SMARTPOSTING.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Обратные ссылки"
+        }
+      },
+      {
+        "id": "e4e40dc48c3b6b86",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "1_Концепты/Психология Убеждения и ИИ.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Исходящие ссылки"
+        }
+      },
+      {
+        "id": "2e51f919aaf94e30",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "1_Концепты/Психология Убеждения и ИИ.md",
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Структура"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "9318bae2aac0c7fd",
+  "lastOpenFiles": [
+    "Питч/МАНИФЕСТ_EXOSKELETON_SMARTPOSTING.md",
+    "Питч/СКРИПТ_ВЫСТУПЛЕНИЯ_SMARTPOSTING.md",
+    "Автоворонка/Рассылка/06_КОНТЕНТ_ЗА_1_МИНУТУ.md",
+    "/Питч/СКРИПТ_ВЫСТУПЛЕНИЯ_SMARTPOSTING.md",
+    "/Питч/МАНИФЕСТ_EXOSKELETON_SMARTPOSTING.md",
+    "/Питч",
+    "/Автоворонка/Рассылка/06_КОНТЕНТ_ЗА_1_МИНУТУ.md",
+    "/Автоворонка/Рассылка",
+    "/Автоворонка",
+    "Посты/2026-03-25/ПОСТ-КОНЦЕПТ_ХВАТИТ_УЧИТЬСЯ_МАРКЕТИНГУ.md",
+    "Посты/2026-03-25/ПОСТ-КОНЦЕПТ_ИИ_ДУБЛИКАТ_ГЕНИЯ.md",
+    "/Посты/2026-03-25/ПОСТ-КОНЦЕПТ_ХВАТИТ_УЧИТЬСЯ_МАРКЕТИНГУ.md",
+    "/Посты/2026-03-25/ПОСТ-КОНЦЕПТ_ИИ_ДУБЛИКАТ_ГЕНИЯ.md",
+    "Питч/ЧЕРНОВИК_ПИТЧА_SMARTPOSTING.md",
+    "/USER.md",
+    "/1_Концепты/БМК_SMARTPOSTING.md",
+    "1_Концепты/БМК_SMARTPOSTING.md",
+    "/1_Концепты",
+    "/Посты/2026-03-25",
+    "Посты/2026-03-25",
+    "/Посты",
+    "/Питч/ЧЕРНОВИК_ПИТЧА_SMARTPOSTING.md",
+    "/AGENTS.md",
+    "Посты/2026-03-24/ПОСТ-КОНЦЕПТ_ДИКТАТУРА_ДЕЙСТВИЯ.md",
+    "/Посты/2026-03-24/ПОСТ-КОНЦЕПТ_ДИКТАТУРА_ДЕЙСТВИЯ.md",
+    "/Автоворонка/Рассылка/05_МАРКЕТИНГ_ЗА_1_МИНУТУ.md",
+    "Автоворонка/Рассылка/05_МАРКЕТИНГ_ЗА_1_МИНУТУ.md",
+    "Посты/2026-03-24",
+    "Посты",
+    "/Посты/2026-03-24",
+    "Питч/ПРЕЗЕНТАЦИЯ_SMARTPOSTING_V1.md",
+    "Питч/АНАЛИЗ_PDF_SEQUOIA.md",
+    "/Питч/ПРЕЗЕНТАЦИЯ_SMARTPOSTING_V1.md",
+    "/Питч/АНАЛИЗ_PDF_SEQUOIA.md",
+    "1_Концепты/Репутационный Контур.md",
+    "Автоворонка/Рассылка/04_ТОП_20_И_СИНТЕЗ.md"
+  ]
+}
