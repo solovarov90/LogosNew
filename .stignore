@@ -1,0 +1,6 @@
+.git
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/graph.json
+.DS_Store
+*.tmp
