@@ -156,7 +156,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-git:Open Git source control": false,
       "switcher:Меню быстрого перехода": false,
       "graph:Граф": false,
       "canvas:Создать новый холст": false,
@@ -168,6 +167,8 @@
   },
   "active": "904ca2f5d506dee0",
   "lastOpenFiles": [
+    "2_Посты/2026-04-13/ПОСТ-КОНЦЕПТ_АНАТОМИЯ_ЛЕНТЫ_И_ВОРОНКИ.md",
+    "2_Посты/2026-04-13",
     "Посты/2026-04-07/ПОСТ-КОНЦЕПТ_ФИЗИКА_THREADS_V2.md",
     "Посты/2026-04-07/ПОСТ-КОНЦЕПТ_ФИЗИКА_THREADS.md",
     "Гайды/СХЕМА_ЗАПУСКА_ГАЙДОВ.md",
