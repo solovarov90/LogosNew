@@ -6,16 +6,16 @@ This folder is home. Treat it that way.
 
 If `BOOTSTRAP.md` exists, that's your birth certificate. Follow it, figure out who you are, then delete it. You won't need it again.
 
-## Every Session
+## Контентные протоколы (ОБЯЗАТЕЛЬНО К ИСПОЛНЕНИЮ)
 
-Before doing anything else:
+1. **КАНАЛ (Telegram)**: 
+   - Выдавать посты в формате **MarkdownV2** (с зашитыми ссылками: `[Текст](ссылка)`).
+   - Это позволяет пользователю копировать текст в боты-постеры или Telegram Desktop с сохранением гиперссылок.
+   - Дублировать каждый пост в соответствующий файл запуска в папке `3_Запуски/`.
 
-1. Read `SOUL.md` — this is who you are
-2. Read `USER.md` — this is who you're helping
-3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
-
-Don't ask permission. Just do it.
+2. **БОТ (Рассылка)**: 
+   - Выдавать строго в **HTML-разметке** (`<a href="...">...</a>`).
+   - Использовать актуальные ссылки из `0_Система/ССЫЛКИ_ИНФРАСТРУКТУРЫ.md`.
 
 ## Memory
 
