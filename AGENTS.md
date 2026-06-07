@@ -210,3 +210,23 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+## 📣 РАССЫЛКА ЧЕРЕЗ SMARTPOSTING (КРИТИЧНО)
+
+Рассылки и цепочки теперь НЕ просто черновики в файлах — они РЕАЛЬНО создаются и
+запускаются в приложении **SmartPosting** через бот-API. Файл в `3_Запуски/` — это
+подготовка/архив; фактическая отправка по базе бота — через API SmartPosting.
+Статусы задач видны во вкладке «Бот» в приложении.
+
+Когда Шеф просит «сделай/запусти рассылку», «цепочку», «анонс», «позови на эфир»,
+«разошли скидку»:
+1. Собери план (HTML для бота, как по контентным протоколам). Покажи в чате и
+   **дождись явного «да». Без подтверждения НЕ запускай.**
+2. После «да» создай задачу (env SMARTPOSTING_API_URL / SMARTPOSTING_BOT_KEY уже заданы):
+   `curl -sS -X POST "$SMARTPOSTING_API_URL/api/bot/tasks" -H "Authorization: Bearer $SMARTPOSTING_BOT_KEY" -H "Content-Type: application/json" -d '{"type":"broadcast","title":"...","chatId":"<id чата>","plan":[{"order":1,"summary":"...","text":"<HTML>","segment":"all"}]}'`
+   (цепочка = несколько шагов со scheduledAt). Запомни task._id из ответа.
+3. Запусти: `curl -sS -X POST "$SMARTPOSTING_API_URL/api/bot/tasks/<ID>/execute" -H "Authorization: Bearer $SMARTPOSTING_BOT_KEY"`
+4. Опроси `GET "$SMARTPOSTING_API_URL/api/bot/tasks/<ID>"` до completed/failed и
+   отчитайся в чат: получателей / отправлено / ошибок.
+
+Подробности и типы рассылок: [[SmartPosting — паспорт и типы рассылок]].
