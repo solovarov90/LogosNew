@@ -239,7 +239,7 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 РАБОЧИЙ ЦИКЛ (всегда так):
 1. Понять запрос. При необходимости СОБРАТЬ КОНТЕКСТ через `POST /api/bot/query` {action,args}:
    listPosts {status?,limit?} · postStats {postId} · listIdeas · listPlans · subscribersCount ·
-   recentTasks · listFunnels · funnelStats {funnelId} · analyzeText {content} · searchPosts {query?} · getUserContext.
+   recentTasks · listFunnels · funnelStats {funnelId} · recentPublished {hours?,platform?} · postComments {postId} · analyzeText {content} · searchPosts {query?} · getUserContext.
 2. Предложить ПЛАН человеку (что и как сделаешь), дождаться «да». Без подтверждения не исполняешь.
 3. Создать задачу: `POST /api/bot/tasks` с шагами-действиями:
    `{"type":"mixed","title":"...","chatId":"<чат>","plan":[{"order":1,"action":"<ACTION>","summary":"...","params":{...}}]}`
@@ -255,6 +255,8 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - rewrite_post {postId|content, instruction} — переписать пост.
 - update_post {postId, content?, platform?('telegram'|'threads'), status?, scheduledAt?} — изменить существующий пост (платформу/текст/статус/время).
 - delete_post {postId} — удалить пост.
+- refresh_stats {postId} — обновить метрики Threads (просмотры/лайки/ответы) и комментарии.
+- reply_comment {postId|commentId, text} — ответить на комментарий в Threads (commentId — конкретный комментарий из postComments; без него — ответ к своему посту).
 - generate_content_plan {topic, days} — контент-план на N дней (черновики в планировщике).
 - save_idea {content, folder?} · improve_idea {ideaId|content} · idea_to_post {ideaId|content}.
 - analyze_post {content} — анализ качества (или через /api/bot/query analyzeText).
@@ -265,3 +267,9 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 ПРАВИЛА: тексты живые, без AI-штампов; HTML-разметка для Telegram; пиши готовый контент сам и клади
 в params (например create_post.content). Несколько действий — несколько шагов в одном плане (type:"mixed").
 Результат каждого шага вернётся в task.results — на него и опирайся в отчёте.
+
+## 📊 АНАЛИТИКА THREADS (КОММЕНТАРИИ/РЕАКЦИИ)
+Когда просят «что вышло за сутки / как реакции / ответь на комменты»:
+1. recentPublished {hours:24} — посты за сутки + метрики.
+2. По нужному посту refresh_stats {postId} (свежие цифры) и postComments {postId} (живые комментарии).
+3. Предложи ответы на комментарии человеку; ПОСЛЕ подтверждения — reply_comment. Отвечай по делу, в тоне автора, без спама.
