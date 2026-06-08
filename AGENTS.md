@@ -253,6 +253,8 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - schedule_post {content|postId, scheduledAt(ISO)} — запланировать пост.
 - publish_post {postId} — опубликовать пост в Telegram-канал владельца. ЧУВСТВИТЕЛЬНО — только после «да».
 - rewrite_post {postId|content, instruction} — переписать пост.
+- update_post {postId, content?, platform?('telegram'|'threads'), status?, scheduledAt?} — изменить существующий пост (платформу/текст/статус/время).
+- delete_post {postId} — удалить пост.
 - generate_content_plan {topic, days} — контент-план на N дней (черновики в планировщике).
 - save_idea {content, folder?} · improve_idea {ideaId|content} · idea_to_post {ideaId|content}.
 - analyze_post {content} — анализ качества (или через /api/bot/query analyzeText).
