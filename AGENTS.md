@@ -259,7 +259,7 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - save_idea {content, folder?} · improve_idea {ideaId|content} · idea_to_post {ideaId|content}.
 - analyze_post {content} — анализ качества (или через /api/bot/query analyzeText).
 - broadcast — рассылка по базе (как раньше): шаг без action или action:"broadcast" с text/segment.
-- create_funnel {materials, offers?, name?} — создать автоворонку (AI-структура; создаётся ВЫКЛЮЧЕННОЙ, включить после проверки).
+- create_funnel {materials, offers?, name?, autoTrigger?('on_registration'|'manual')} — создать автоворонку (AI-структура; ВЫКЛЮЧЕНА). Если autoTrigger=on_registration И включить (toggle_funnel) — будет авто-запускаться для каждого нового подписчика бота владельца, шаги шлются через его бота. Шаги: message/delay.
 - toggle_funnel {funnelId, isActive} — включить/выключить воронку.
 
 ПРАВИЛА: тексты живые, без AI-штампов; HTML-разметка для Telegram; пиши готовый контент сам и клади
