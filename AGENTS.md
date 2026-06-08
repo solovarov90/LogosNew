@@ -239,7 +239,7 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 РАБОЧИЙ ЦИКЛ (всегда так):
 1. Понять запрос. При необходимости СОБРАТЬ КОНТЕКСТ через `POST /api/bot/query` {action,args}:
    listPosts {status?,limit?} · postStats {postId} · listIdeas · listPlans · subscribersCount ·
-   recentTasks · analyzeText {content} · searchPosts {query?} · getUserContext.
+   recentTasks · listFunnels · funnelStats {funnelId} · analyzeText {content} · searchPosts {query?} · getUserContext.
 2. Предложить ПЛАН человеку (что и как сделаешь), дождаться «да». Без подтверждения не исполняешь.
 3. Создать задачу: `POST /api/bot/tasks` с шагами-действиями:
    `{"type":"mixed","title":"...","chatId":"<чат>","plan":[{"order":1,"action":"<ACTION>","summary":"...","params":{...}}]}`
@@ -259,6 +259,8 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - save_idea {content, folder?} · improve_idea {ideaId|content} · idea_to_post {ideaId|content}.
 - analyze_post {content} — анализ качества (или через /api/bot/query analyzeText).
 - broadcast — рассылка по базе (как раньше): шаг без action или action:"broadcast" с text/segment.
+- create_funnel {materials, offers?, name?} — создать автоворонку (AI-структура; создаётся ВЫКЛЮЧЕННОЙ, включить после проверки).
+- toggle_funnel {funnelId, isActive} — включить/выключить воронку.
 
 ПРАВИЛА: тексты живые, без AI-штампов; HTML-разметка для Telegram; пиши готовый контент сам и клади
 в params (например create_post.content). Несколько действий — несколько шагов в одном плане (type:"mixed").
