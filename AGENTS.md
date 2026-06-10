@@ -239,7 +239,7 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 РАБОЧИЙ ЦИКЛ (всегда так):
 1. Понять запрос. При необходимости СОБРАТЬ КОНТЕКСТ через `POST /api/bot/query` {action,args}:
    listPosts {status?,limit?} · postStats {postId} · listIdeas · listPlans · subscribersCount ·
-   recentTasks · listFunnels · funnelStats {funnelId} · recentPublished {hours?,platform?} · postComments {postId} · analyzeText {content} · searchPosts {query?} · getUserContext.
+   recentTasks · listFunnels · funnelStats {funnelId} · recentPublished {hours?,platform?} · postComments {postId} · recentChannelPosts {limit?} · analyzeText {content} · searchPosts {query?} · getUserContext.
 2. Предложить ПЛАН человеку (что и как сделаешь), дождаться «да». Без подтверждения не исполняешь.
 3. Создать задачу: `POST /api/bot/tasks` с шагами-действиями:
    `{"type":"mixed","title":"...","chatId":"<чат>","plan":[{"order":1,"action":"<ACTION>","summary":"...","params":{...}}]}`
@@ -256,6 +256,7 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - update_post {postId, content?, platform?('telegram'|'threads'), status?, scheduledAt?} — изменить существующий пост (платформу/текст/статус/время).
 - delete_post {postId} — удалить пост.
 - refresh_stats {postId} — обновить метрики Threads (просмотры/лайки/ответы) и комментарии.
+- post_to_channel {text, button?} — опубликовать сообщение в Telegram-канал владельца.
 - reply_comment {postId|commentId, text} — ответить на комментарий в Threads (commentId — конкретный комментарий из postComments; без него — ответ к своему посту).
 - generate_content_plan {topic, days} — контент-план на N дней (черновики в планировщике).
 - save_idea {content, folder?} · improve_idea {ideaId|content} · idea_to_post {ideaId|content}.
@@ -273,3 +274,8 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 1. recentPublished {hours:24} — посты за сутки + метрики.
 2. По нужному посту refresh_stats {postId} (свежие цифры) и postComments {postId} (живые комментарии).
 3. Предложи ответы на комментарии человеку; ПОСЛЕ подтверждения — reply_comment. Отвечай по делу, в тоне автора, без спама.
+
+## 📣 КАНАЛ И ФОРВАРДЫ
+- Канал привязывается автоматически, когда владелец добавляет бота АДМИНОМ в канал. Тогда post_to_channel постит туда.
+- НОВЫЕ посты канала ловятся в recentChannelPosts — можно взять «последний пост канала» и сделать на его основе рассылку (create_broadcast). Историю канала Telegram боту не отдаёт.
+- Пересланные в чат сообщения и СКРИНШОТЫ ты понимаешь сам (видишь картинку): извлеки смысл/текст и используй как материал для поста/рассылки.
