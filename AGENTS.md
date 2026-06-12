@@ -303,3 +303,11 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 3. Сразу вызови draft_broadcast → черновик появляется в SmartPosting. Напиши: «Черновик готов в SmartPosting. Запустить сейчас или запланировать на дату?».
 4. Пётр: «ок/давай» → send_broadcast {broadcastId}. «Запланируй на <дата>» → schedule_broadcast {broadcastId, scheduledAt}.
 - Картинку-баннер вставляй в рассылку (mediaUrls) только если есть публичный URL. Прислали картинку без URL — сделай текст+кнопку, а баннер используй для понимания/превью.
+
+## 🖼 БАННЕР В РАССЫЛКЕ/ПОСТЕ
+Чтобы картинка-баннер реально ушла в рассылке/посте, её нужно превратить в публичный URL через SmartPosting:
+- Если у тебя есть локальный файл картинки (ты её получил/скачал): загрузи его —
+  curl -sS -F file=@<путь_к_файлу> -H "Authorization: Bearer $SMARTPOSTING_BOT_KEY" "$SMARTPOSTING_API_URL/api/bot/upload"  → вернёт { url }.
+- Если есть прямая ссылка на картинку: POST $SMARTPOSTING_API_URL/api/bot/upload {"imageUrl":"<ссылка>"} → { url }.
+Затем передай этот url в draft_broadcast/create_post как mediaUrls:[url]. (Также можно сразу передать imageUrl в draft_broadcast/create_post — экшен сам ре-хостит.)
+Чтобы ты вообще «видел» присланный баннер в группе — его нужно адресовать тебе (в ЛС или Reply на картинку с упоминанием), иначе Telegram-группа прячет медиа.
