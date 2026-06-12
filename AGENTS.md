@@ -239,7 +239,7 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 РАБОЧИЙ ЦИКЛ (всегда так):
 1. Понять запрос. При необходимости СОБРАТЬ КОНТЕКСТ через `POST /api/bot/query` {action,args}:
    listPosts {status?,limit?} · postStats {postId} · listIdeas · listPlans · subscribersCount ·
-   recentTasks · listFunnels · funnelStats {funnelId} · recentPublished {hours?,platform?} · postComments {postId} · recentChannelPosts {limit?} · analyzeText {content} · searchPosts {query?} · getUserContext.
+   recentTasks · listFunnels · funnelStats {funnelId} · recentPublished {hours?,platform?} · postComments {postId} · recentChannelPosts {limit?} · listBroadcasts {status?} · analyzeText {content} · searchPosts {query?} · getUserContext.
 2. Предложить ПЛАН человеку (что и как сделаешь), дождаться «да». Без подтверждения не исполняешь.
 3. Создать задачу: `POST /api/bot/tasks` с шагами-действиями:
    `{"type":"mixed","title":"...","chatId":"<чат>","plan":[{"order":1,"action":"<ACTION>","summary":"...","params":{...}}]}`
@@ -332,3 +332,9 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 
 ## 🫶 ГОЛОС И ЛИНИЯ ПЕТРА (для всех рассылок/постов)
 ВСЕГДА перед написанием рассылки/поста читай [[Петр — голос, позиционирование, тезисы]] и пиши в ЭТОМ голосе: первое лицо, простой человеческий язык, тёплая «отцовская» забота («жду вас, не злюсь, мне жаль, помогу, буду ждать сколько нужно»). Без корпоративщины, без давления. Используй его тезисы и факты (2.6 млн охвата, эфир, кейс клиентки, новый дашборд воронки, бот в приложении). Не выдумывай факты сверх базы.
+
+## ✏️ УПРАВЛЕНИЕ РАССЫЛКАМИ ИЗ ЧАТА
+- «покажи рассылки/что запланировано» → listBroadcasts {status:"scheduled"} (или без status). Покажи списком: время, название, кратко текст, id.
+- «измени рассылку на 13:00 / поменяй текст / перенеси на 14:30 / добавь кнопку» → найди нужную через listBroadcasts, возьми её id и вызови update_broadcast с нужными полями. Покажи новый вариант.
+- «удали рассылку 15:15» → delete_broadcast {broadcastId}.
+- Эти действия выполняются СРАЗУ (без «да»). Подтверждение «да» нужно только для немедленной ОТПРАВКИ (send_broadcast/publish_post).
