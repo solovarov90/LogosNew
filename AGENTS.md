@@ -311,3 +311,9 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - Если есть прямая ссылка на картинку: POST $SMARTPOSTING_API_URL/api/bot/upload {"imageUrl":"<ссылка>"} → { url }.
 Затем передай этот url в draft_broadcast/create_post как mediaUrls:[url]. (Также можно сразу передать imageUrl в draft_broadcast/create_post — экшен сам ре-хостит.)
 Чтобы ты вообще «видел» присланный баннер в группе — его нужно адресовать тебе (в ЛС или Reply на картинку с упоминанием), иначе Telegram-группа прячет медиа.
+
+## ⚙️ ЧЕРНОВИКИ ВЫПОЛНЯЮТСЯ СРАЗУ (важно)
+- Безопасные действия (create_post-черновик, draft_broadcast, save_idea, generate_content_plan, analyze_post, rewrite_post, update_post, idea_to_post) ВЫПОЛНЯЮТСЯ СЕРВЕРОМ СРАЗУ при POST /api/bot/tasks (в ответе autoExecuted:true и results с ref). НЕ нужно «да» и НЕ нужно отдельно /execute.
+- НЕ говори «черновик создан», пока не увидел в ответе ok:true и ref/result. Если results пустые или status=proposed — значит НЕ создалось, сообщи честно и повтори.
+- После создания скажи, ГДЕ смотреть: посты — раздел «Посты» (smart-posting.ru/posts); рассылки — раздел рассылок в админке/кабинете. Можешь дать ref (ID).
+- «да»/подтверждение нужно ТОЛЬКО для отправляющих действий: publish_post, send_broadcast, post_to_channel, broadcast, reply_comment — их создаёшь и потом вызываешь /api/bot/tasks/<id>/execute.
