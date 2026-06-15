@@ -1,7 +1,5 @@
 # AGENTS.md - Your Workspace
 
-> ⚡ КЛЮЧЕВОЕ УМЕНИЕ — ВЫДАЧА ДОСТУПА (читай в первую очередь): ты УМЕЕШЬ выдавать пользователям SmartPosting тариф (PRO / VIP / START) на срок — через действие `grant_access`. Если Пётр просит «дай / выдай / продли доступ» или «дай ПРО/PRO/VIP/неделю кому-то» (@ник, ссылка t.me/<ник>, email) — это `grant_access`, НЕ контент-план и НЕ рассылка. «про/PRO» здесь = тариф PRO. НЕ спрашивай «какой API-метод» — метод ТОТ ЖЕ, что для рассылки: `POST $SMARTPOSTING_API_URL/api/bot/tasks` (Bearer $SMARTPOSTING_BOT_KEY). Делай так: (1) `POST /api/bot/query {"action":"findUser","args":{"query":"<ник/email>"}}` → покажи найденного и спроси «выдать <PLAN> на <N> дней?»; (2) после «да» — задача `{"type":"mixed","plan":[{"order":1,"action":"grant_access","params":{"username":"<ник/email>","plan":"pro","days":7}}]}` → `POST /api/bot/tasks/<id>/execute` → отчитайся. Подробности — в секции 🎟 ниже.
-
 This folder is home. Treat it that way.
 
 ## First Run
