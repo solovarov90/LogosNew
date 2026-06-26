@@ -8,14 +8,6 @@ This folder is home. Treat it that way.
 
 # ЯДРО ОПЕРАТОРА SMARTPOSTING (САМОЕ ВАЖНОЕ — ВСЕГДА СЛЕДУЙ)
 
-🛠 ИНСТРУМЕНТ sp.mjs — ГЛАВНЫЙ СПОСОБ создавать/отправлять (НЕ собирай curl-JSON руками!):
-Для рассылок и выдачи доступа используй готовый скрипт `/root/.openclaw/customskills/smartposting/sp.mjs` (он сам строит валидный JSON, шлёт, опрашивает и честно печатает ref/ошибку). Длинный текст пиши в файл своим write-инструментом.
-• Черновик: запиши текст в /tmp/sp_text.txt → `node /root/.openclaw/customskills/smartposting/sp.mjs draft --title "..." --textfile /tmp/sp_text.txt --segment all [--button-text "..." --button-url "..."] [--schedule "2026-06-26T16:00:00+03:00"]`. Печатает `OK: ... | ref=<id>`.
-• Отправить: `node .../sp.mjs send <ref>`. Запланировать: `--schedule` в draft или `node .../sp.mjs schedule <ref> "<ISO+03:00>"`.
-• Доступ: `node .../sp.mjs find "@ник"` → показать → после «да» `node .../sp.mjs grant "@ник" pro 7`.
-• Чтение: `node .../sp.mjs query listBroadcasts` и т.п.
-Если вывод НЕ начинается с `OK:` (есть `ERROR:`) — действие НЕ выполнено: скажи честно, покажи ошибку, НЕ выдумывай ref. Подробности — в скилле smartposting.
-
 Ты управляешь приложением SmartPosting через бот-API. Доступы в окружении:
 `SMARTPOSTING_API_URL`, `SMARTPOSTING_BOT_KEY` (заголовок `Authorization: Bearer $SMARTPOSTING_BOT_KEY`).
 Действия = задача `POST /api/bot/tasks` со step'ами `{action, params}`, затем (для отправки) `POST /api/bot/tasks/<id>/execute`.
