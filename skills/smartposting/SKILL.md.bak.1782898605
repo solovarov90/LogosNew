@@ -94,5 +94,3 @@ node /root/.openclaw/customskills/smartposting/sp.mjs edit <broadcastId> \
 ```
 Доработать рассылку = `get <id>` (взять текущий текст) → собрать новый текст в файл → `edit <id> --textfile <файл>` (+ при нужде --imagefile для скрина).
 
-## Кнопка — чистый ярлык
-`--button-text` = короткий ярлык БЕЗ ссылки (напр. «Мой канал»); URL только в `--button-url`. Не вставляй t.me/... в текст кнопки.

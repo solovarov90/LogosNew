@@ -66,8 +66,6 @@ node /root/.openclaw/customskills/smartposting/sp.mjs query listBroadcasts --arg
 
 
 ## Прикрепить присланную КАРТИНКУ к рассылке (через sp.mjs)
-
-> ⭐ ПРОЩЕ ВСЕГО --lastimage: чтобы прикрепить ТОЛЬКО ЧТО присланную Петром картинку — просто добавь флаг `--lastimage` (БЕЗ пути!). Скрипт сам возьмёт последний присланный файл из инбокса. НЕ пытайся вычислять имя/путь файла — используй `--lastimage`. Пример: `node /root/.openclaw/customskills/smartposting/sp.mjs draft --title "..." --textfile /tmp/t.txt --lastimage`, или для существующей рассылки `node .../sp.mjs edit <broadcastId> --lastimage`. Если пишет «в инбоксе нет картинок» — тогда попроси Петра прислать фото.
 Когда Пётр присылает/пересылает ФОТО и просит прикрепить его к рассылке — у тебя есть ЛОКАЛЬНЫЙ путь
 к этому файлу (localPath присланного медиа, обычно `/root/.openclaw/media/inbound/<...>.jpg`).
 НЕ говори «прикрепил», пока реально не вызвал скрипт с `--imagefile` и не увидел «(картинка прикреплена)» в выводе.
@@ -94,5 +92,3 @@ node /root/.openclaw/customskills/smartposting/sp.mjs edit <broadcastId> \
 ```
 Доработать рассылку = `get <id>` (взять текущий текст) → собрать новый текст в файл → `edit <id> --textfile <файл>` (+ при нужде --imagefile для скрина).
 
-## Кнопка — чистый ярлык
-`--button-text` = короткий ярлык БЕЗ ссылки (напр. «Мой канал»); URL только в `--button-url`. Не вставляй t.me/... в текст кнопки.

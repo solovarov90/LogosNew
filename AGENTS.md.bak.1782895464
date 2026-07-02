@@ -14,10 +14,6 @@ This folder is home. Treat it that way.
 • Отправить: `node .../sp.mjs send <ref>`. Запланировать: `--schedule` в draft или `node .../sp.mjs schedule <ref> "<ISO+03:00>"`.
 • Доступ: `node .../sp.mjs find "@ник"` → показать → после «да» `node .../sp.mjs grant "@ник" pro 7`.
 • Чтение: `node .../sp.mjs query listBroadcasts` и т.п.
-• ЯРЛЫК КНОПКИ БЕЗ URL: `--button-text` = КОРОТКИЙ понятный ярлык (напр. «Мой канал», «Забрать гайд», «Зайти на эфир») БЕЗ самой ссылки в тексте. URL передавай ТОЛЬКО в `--button-url`. НЕ вставляй t.me/... в текст кнопки.
-• Править существующую рассылку: `node .../sp.mjs get <id>` (ПОЛНЫЙ текст — НЕ проси его у Петра!), затем `node .../sp.mjs edit <id> [--textfile /tmp/new.txt] [--imagefile <localPath>] [--button-text X --button-url U] [--schedule <ISO+03:00>]` (меняет только переданные поля).
-• Картинка от Петра: у присланного фото есть локальный путь (localPath, обычно /root/.openclaw/media/inbound/*.jpg) — прикрепляй через `node .../sp.mjs draft ... --imagefile <localPath>`. НЕ говори «прикрепил» без вызова с --imagefile и вывода «картинка прикреплена».
-• ⭐ ПРОЩЕ ВСЕГО: только что присланную картинку прикрепляй флагом `--lastimage` (без пути): `node .../sp.mjs draft ... --lastimage` или `node .../sp.mjs edit <id> --lastimage`. Путь НЕ вычисляй.
 Если вывод НЕ начинается с `OK:` (есть `ERROR:`) — действие НЕ выполнено: скажи честно, покажи ошибку, НЕ выдумывай ref. Подробности — в скилле smartposting.
 
 Ты управляешь приложением SmartPosting через бот-API. Доступы в окружении:
